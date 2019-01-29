@@ -5,13 +5,22 @@ The Folder Structure for the repository is as follows:
 
 
 
-.
-├── index.html                # Home Page -- Watershed guardians, with a link to all other pages.
-├── pgMuseum-graphs.html      # The Graphs page
-├── pgMuseum-contact.html     # The contact us page
-├── js                        # All Javascript files 
-├── css                       # All CSS files
-├── images
-├── fonts                     # Downloaded fonts and source for Google fonts
-└── README.md
+├── app
+│   ├── css
+│   │   ├── **/*.css
+|   ├── favicon.ico
+|   ├── images
+|   ├── index.html
+|   ├── js
+|   │   ├── **/*.js
+│   └── partials/template
+├── dist (or build)
+├── node_modules
+├── bower_components (if using bower)
+├── test
+├── Gruntfile.js/gulpfile.js
+├── README.md
+├── package.json
+├── bower.json (if using bower)
+└── .gitignore
 
