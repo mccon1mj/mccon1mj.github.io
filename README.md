@@ -3,6 +3,8 @@ The website for Pacific Grove Museum of Natural History's Watershed guardians pr
 
 The Folder Structure for the repository is as follows: 
 
+
+`
 .
 ├── index.html                # Home Page -- Watershed guardians, with a link to all other pages.
 ├── pgMuseum-graphs.html      # The Graphs page
@@ -12,3 +14,4 @@ The Folder Structure for the repository is as follows:
 ├── images
 ├── fonts                     # Downloaded fonts and source for Google fonts
 └── README.md
+`
