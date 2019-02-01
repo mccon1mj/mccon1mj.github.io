@@ -1574,6 +1574,13 @@ header.no_border {
 			.logo a:hover span {
 				transform:rotateY(360deg)
 			}
+
+
+
+		.musuem-logo {
+			position: relative;
+			bottom: 20px ;
+		}
 	.logo a {
 		display:block;
 		position:relative;
