@@ -66,7 +66,7 @@
             <div class="over" data-opacity="0.8" data-color="#000"></div>
             <div class="into_back image_bck"  data-image="images/bigsur1.JPG"></div>
             
-
+            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
             <div class="inside_intro_block inside_no_header">
                 <div class="ins_int_item white_txt bordered_wht_border text-center">
                     <div class="simple_block simple_block_sml">
@@ -125,6 +125,54 @@
 <script src="js/bootstrap.min.js"></script>
 <!-- Theme JS -->
 <script src="js/script.js"></script>
+<script src = "js/jquery.canvasjs.min.js"></script>    
+ <script>
+     window.onload = function() {
+        
+        var dataPoints = [];
+        
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "dark2",
+            title: {
+                text: "Air Temp vs Time"
+            },
+            axisY: {
+                title: "Latitude",
+                titleFontSize: 24
+            },
+            data: [{
+                type: "scatter",
+                
+                dataPoints: dataPoints
+            }]
+        });
+
+        $(function(){
+
+
+
+  $.getJSON("http://gsx2json.com/api?id=1vc7wCjNXK39HMEYDkOJRMhQGPJpxMu4MJgTsydyLats&columns=false", function(d){
+    $.each(d.rows, function(i, r){
+      if(r.sitename == "Garland Ranch: Vehicle Bridge" && r.temperaturesample1celsius !== 0 && r.groupnumber == 4)
+    {
+      dataPoints.push({
+        x: new Date(r.date),
+        y: r.temperaturesample1celsius
+      });
+    }});
+  })
+  
+  .fail(function(xhr, status, error) {
+    console.log("Ajax Error", status, error);
+  });
+
+  
+  chart.render();
+});
+
+}
+    </script>   
 
 
 </body>
