@@ -4,7 +4,7 @@
 <title> Canvas JS charts for latirute vs timestamp</title>
 </head>
 <body>
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<div id="chartContainer" style="height: 300px; width: 300px;"></div>
 <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 <script src="js/jquery.canvasjs.min.js"></script>
 
@@ -17,14 +17,14 @@
             animationEnabled: true,
             theme: "light2",
             title: {
-                text: "Air Temp vs Time"
+                text: "Test"
             },
             axisY: {
                 title: "Latitude",
                 titleFontSize: 24
             },
             data: [{
-                type: "scatter",
+                type: "line",
                 
                 dataPoints: dataPoints
             }]
@@ -89,7 +89,7 @@
           $(function(){
   
 
-  $.getJSON("https://cors-anywhere.herokuapp.com/http://gsx2json.com/api?id=1vc7wCjNXK39HMEYDkOJRMhQGPJpxMu4MJgTsydyLats&columns=false", function(d){
+  $.getJSON("https://cors-anywhere.herokuapp.com/http://gsx2json.com/api?id=1vc7wCjNXK39HMEYDkOJRMhQGPJpxMu4MJgTsydyLats", function(d){
     $.each(d.rows, function(i, r){
       if(r.sitename == "Garland Ranch: Vehicle Bridge" && r.temperaturesample1celsius !== 0 && r.groupnumber == 4)
     {
