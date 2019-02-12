@@ -89,7 +89,7 @@
           $(function(){
   
 
-  $.getJSON("http://gsx2json.com/api?id=1vc7wCjNXK39HMEYDkOJRMhQGPJpxMu4MJgTsydyLats&columns=false", function(d){
+  $.getJSON("https://cors-anywhere.herokuapp.com/http://gsx2json.com/api?id=1vc7wCjNXK39HMEYDkOJRMhQGPJpxMu4MJgTsydyLats&columns=false", function(d){
     $.each(d.rows, function(i, r){
       if(r.sitename == "Garland Ranch: Vehicle Bridge" && r.temperaturesample1celsius !== 0 && r.groupnumber == 4)
     {
