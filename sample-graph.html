@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graphs</title>
+
+<!-- Bootstrap CSS -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/docs.min.css" rel="stylesheet">
+
+<!-- Font Awesome CSS -->
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="fonts/themify-icons.css" rel="stylesheet">
+
+
+
+<!-- Owl Carousel CSS -->
+<link href="css/owl.carousel.css" rel="stylesheet">
+
+<!-- Magnific Popup core CSS file -->
+<link rel="stylesheet" href="css/magnific-popup.css"> 
+
+<!-- Animate CSS -->
+<link rel="stylesheet" href="css/animate.css"> 
+
+
+<!-- Theme CSS -->
+<link href="css/style.css" rel="stylesheet">
+
+<!-- Google Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+
+<meta charset='utf-8' />
+<title>Add hillshading</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+<style>
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:0; width:100%; }
+#marker {
+background-image: url('./images/marker.png');
+background-size: cover;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+cursor: pointer;
+}
+#pgmuseum {
+background-image: url('./images/pgmuseum001.jpg');
+background-size: cover;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+cursor: pointer;
+
+}
+
+
+#pgmuseum:hover{
+    visibility: visible
+}
+
+.mapboxgl-popup {
+max-width: 200px;
+}
+
+.main_menu {
+    color:black
+}
+
+.sub_menu .mega_sub .sub_cont ul ul li{
+   
+    color:crimson
+}
+</style>
+
+</head>
+<body>
+
+
+
+
+<div >
+
+     <!-- Header -->
+     <header class="no_border closed_menu">
+
+
+        <!-- Logo -->
+        <div class="logo pull-left">
+            <a href="https://www.pgmuseum.org/"><b>Pacific Grove Museum of Natural History</b></a>
+        </div>
+
+
+        <!-- Header Buttons -->
+        <div class="header_btns_wrapper">
+                      
+
+            <!-- Main Menu Btn -->
+            <div class="main_menu"><i class="ti-menu"></i><i class="ti-close"></i></div>
+            
+            
+            <!-- Sub Menu -->
+            <div class="sub_menu">
+                <div class="sub_cont">
+                    <ul><li><img src = "images/pgLogo-01.png" class = "musuem-logo" alt = "museum-logo" height="100" width="80" /></li>
+                        <li class="mega_sub"><a href="./index.html">Home</a></li>
+                        
+                        <li><a href="https://www.pgmuseum.org/teachersresources" class = "parents">Teachers</a>
+                        
+                            <ul class="mega_menu">
+                                <li class="mega_sub">
+                                    <ul>
+                                        <li><a href="https://www.pgmuseum.org/teachersresources">Resources</a></li>
+                                        <li><a href="https://www.pgmuseum.org/watershed-guardians">Sign Up</a></li>
+                                        <li><a href="https://www.pgmuseum.org/directions">Directions</a></li>    
+                                    </ul>
+                                    </li>
+                                </ul>
+                        
+                        </li>
+                       
+                        <li class="mega_sub"><a href="https://www.pgmuseum.org/student-guide">Students</a></li>
+                        <li class="mega_sub"><a href="./contact.html">Contact</a></li>
+                        <li class = "mega_sub"><a href="./news.html" target="_blank">News</a></li>
+
+                        
+                    </ul>
+ 
+
+                </div>
+            </div>
+            <!-- Sub Menu End -->
+
+        </div>
+        <!-- Header Buttons End -->
+                  
+        
+        <!-- Up Arrow -->
+        <a href="#page" class="up_block go"><i class="fa fa-angle-up"></i></a>
+
+    </header>
+    <!-- Header End -->
+
+
+<!--Intro-->
+
+<div id='map'></div></div>
+<!-- Page End -->
+
+
+
+<!-- JQuery -->
+<script src="js/jquery-1.11.3.min.js"></script> 
+<!-- WL Carousel JS -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- PrefixFree -->
+<script src="js/prefixfree.min.js"></script>
+<!-- Magnific Popup core JS file -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<!-- Textillate -->
+<script src="js/jquery.lettering.js"></script>
+<!-- Countdown -->
+<script src="js/jquery.plugin.min.js"></script> 
+<script src="js/jquery.countdown.min.js"></script>
+<!-- JQuery UI -->
+<script src="js/jquery-ui.js"></script>
+<!-- Wow -->
+<script src="js/wow.js"></script>
+<!-- Masonry -->
+<script src="js/masonry.pkgd.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Theme JS -->
+<script src="js/script.js"></script>
+
+<!-- Mapbox-->
+<script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZ2F1dGFtdGF0YSIsImEiOiJjanR0MWt0NnkwM2JmNDVvZmdzM2c1bWFzIn0.EsUpW8CxT9m30nwtQsd_dg';
+       var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/cjaudgl840gn32rnrepcb9b9g', // the outdoors-v10 style but without Hillshade layers
+center: [-121.6517, 36.5298],
+zoom: 9
+});
+
+// The lat longs for the locations. Variable names are location names.
+var rosie = [-121.7345,36.4755];
+var songbird = [-121.8310,36.5243];
+var garlandRanchVehicle = [-121.7724,36.5098];
+var pgmuseum1 = [-121.9172,36.6219]
+//var garlandRanchEucalyptus = [];
+//var carmelLagoon = [];
+//var greenWoodPark = [];
+var popup = new mapboxgl.Popup({ offset: 25 })
+.setText('Rosies bridge')
+//.setHTML('<iframe width="800" height="800" seamless frameborder="0" scrolling="yes" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRkh-qVDPfmChMk8AkEOjwIA5gUlAaAeoHimQZEL0Szrz7zXrlYZYezk4d7S6qaDxio8CVHP8tsKFGM/pubchart?oid=1836834720&amp;format=interactive"></iframe>');
+var popup1 = new mapboxgl.Popup({offset: 25})
+.setText('Garland ranch vehicle bridge')
+
+var popup2 = new mapboxgl.Popup({offset: 25})
+.setText('pacific grove museum')
+
+// create DOM element for the marker
+var el = document.createElement('div');
+el.id = 'marker';
+
+var el_1 = document.createElement('div')
+el_1.id = 'marker';
+
+var el_2 = document.createElement('div')
+el_2.id = 'pgmuseum';
+
+
+ 
+// create the marker
+new mapboxgl.Marker(el)
+.setLngLat(rosie)
+.setPopup(popup) // sets a popup on this marker
+.addTo(map);
+
+new mapboxgl.Marker(el_1)
+.setLngLat(garlandRanchVehicle)
+.setPopup(popup1)
+.addTo(map);
+
+
+new mapboxgl.Marker(el_2)
+.setLngLat(pgmuseum1)
+.addTo(map);
+
+
+         
+map.on('load', function () {
+        map.addSource('dem', {
+        "type": "raster-dem",   
+        "url": "mapbox://mapbox.terrain-rgb"
+        });
+        map.addLayer({
+        "id": "hillshading",
+        "source": "dem",
+        "type": "hillshade"
+        // insert below waterway-river-canal-shadow;
+        // where hillshading sits in the Mapbox Outdoors style
+        }, 'waterway-river-canal-shadow');
+        });
+
+     
+</script>
+
