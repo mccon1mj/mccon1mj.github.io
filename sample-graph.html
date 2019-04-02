@@ -90,7 +90,7 @@ max-width: 200px;
 
 
         <!-- Logo -->
-        <div class="logo pull-left">
+        <div class="logo  ">
             <a href="https://www.pgmuseum.org/"><b>Pacific Grove Museum of Natural History</b></a>
         </div>
 
@@ -184,7 +184,7 @@ max-width: 200px;
 container: 'map',
 style: 'mapbox://styles/mapbox/cjaudgl840gn32rnrepcb9b9g', // the outdoors-v10 style but without Hillshade layers
 center: [-121.6517, 36.5298],
-zoom: 9
+zoom: 8
 });
 
 // The lat longs for the locations. Variable names are location names.
@@ -230,12 +230,46 @@ new mapboxgl.Marker(el_1)
 
 new mapboxgl.Marker(el_2)
 .setLngLat(pgmuseum1)
-.setPopup(popup2)
 .addTo(map);
 
 
          
 map.on('load', function () {
+
+    map.addLayer({
+'id': 'maine',
+'type': 'fill',
+'source': {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'geometry': {
+'type': 'Polygon',
+'coordinates': [[[-121.784582, 36.808950],
+[-121.808642, 36.704513],
+[-121.834421, 36.638341],
+[-121.897915, 36.612670],
+[-121.968747, 36.569418],
+[-121.936913, 36.514868],
+[-121.923190, 36.438996],
+[-121.862515, 36.284210],
+[-121.331249, 35.780695],
+[-120.936622, 35.783597],
+[-120.216157, 35.789754],
+[-120.216157, 45.46022288673396],
+
+]]
+}
+}
+},
+'layout': {},
+'paint': {
+'fill-color': '#088',
+'fill-opacity': 2.0
+}
+});
+
+
         map.addSource('dem', {
         "type": "raster-dem",   
         "url": "mapbox://mapbox.terrain-rgb"
