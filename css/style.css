@@ -1217,37 +1217,7 @@ ul {
 		text-transform: none;
 	}
 
-/*Wedding*/
-.pink_back {
-	background: url(../images/bb.jpg);
-}
-.countdown {
-	margin: 20px 0 0;
-	display: block;
-	height: 72px
-}
-.countdown-amount {
-	font: 40px/40px Oswald;
-	display: inline-block;
-	width: 80px;
-	text-align: right;
-	vertical-align: top;
-}
-.countdown-amount:after {
 
-}
-.countdown-section:last-child .countdown-amount:after {
-	display: none!important
-}
-.countdown-period {
-	position: absolute;
-	margin: 45px 0 0 0;
-	right:0;
-	font-size: 12px
-}
-.countdown-section {
-	position: relative;
-}
 
 /*Header*/
 header {
@@ -1512,6 +1482,7 @@ header.no_border {
 	.footer.white_txt h4 {
 		color: #fff
 	}
+
 		.footer h2 {
 			margin: 0 0 72px 0
 		}
@@ -1572,7 +1543,7 @@ header.no_border {
 		}
 	
 			.logo a:hover span {
-				transform:rotateY(360deg)
+				transform:rotateX(360deg)
 			}
 
 
@@ -1589,9 +1560,9 @@ header.no_border {
 		transition:all 0.3s ease-out;
 		font: 400 20px/32px Oswald;
 		text-decoration: none;
-		color: #ededed;
+		color: #0e0d0d;
 		text-transform: uppercase;
-		border: 2px solid #ededed;
+		border: 4px solid #ee0000;
 		padding: 0 5px;
 		transition:0.3s all;
 	}
@@ -1716,7 +1687,7 @@ header.no_border {
 }
 	.sub_cont ul .mega_menu {
 		position: absolute;
-		background: #fff;
+		background: rgb(15, 21, 172);
 		border: 1px solid #e4e4e4;
 		margin:0 0 0 -1px;
 		z-index: 2;
@@ -1984,7 +1955,7 @@ header.no_border {
 		}
 		.sub_menu a {
 			font: 16px/24px Oswald;
-			color: #e4e4e4;
+			color: #06133d;
 			padding: 12px 15px 10px;
 			display: block;
 			position: relative;
@@ -1995,7 +1966,7 @@ header.no_border {
 			height: 48px
 		}
 			.sub_menu ul ul a {
-				color: #949494
+				color: #ff9494
 			}
 			.sub_menu a:hover, .sub_menu a.active {
 				transition:0.3s all;
@@ -2016,7 +1987,7 @@ header.no_border {
 				border:0 solid rgba(255,255,255,0.18);
 			}
 			.sub_menu a:hover:before, .sub_menu a.active:before {
-				background: #ededed;
+				background: #ffa7a7;
 			}
 			
 		.contacts_block {
