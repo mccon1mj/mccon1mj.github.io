@@ -32,7 +32,47 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
 
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+<style>
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:0; width:100%; }
+#marker {
+background-image: url('./images/marker.png');
+background-size: cover;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+cursor: pointer;
+}
+#pgmuseum {
+background-image: url('./images/pgmuseum001.jpg');
+background-size: cover;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+cursor: pointer;
 
+}
+
+
+#pgmuseum:hover{
+    visibility: visible
+}
+
+.mapboxgl-popup {
+max-width: 200px;
+}
+
+.main_menu {
+    color:black
+}
+
+.sub_menu .mega_sub .sub_cont ul ul li{
+   
+    color:crimson
+}
+</style>
 </head>
 <body>
 
@@ -50,7 +90,7 @@
 <header class="no_border">
 
     <!-- Logo -->
-    <div class="logo pull-left">
+    <div class="logo">
         <a href="index.html"><b>Watershed Guardians</b></a>
     </div>
     
@@ -92,7 +132,7 @@
 </section>
 <!-- Intro End -->
 
-
+<div id='map'></div></div>
 
 
 
@@ -126,6 +166,117 @@
 <script src="js/bootstrap.min.js"></script>
 <!-- Theme JS -->
 <script src="js/script.js"></script>
+
+<!-- Mapbox-->
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZ2F1dGFtdGF0YSIsImEiOiJjanR0MWt0NnkwM2JmNDVvZmdzM2c1bWFzIn0.EsUpW8CxT9m30nwtQsd_dg';
+   var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/cjaudgl840gn32rnrepcb9b9g', // the outdoors-v10 style but without Hillshade layers
+center: [-121.6517, 36.5298],
+zoom: 8
+});
+
+// The lat longs for the locations. Variable names are location names.
+var rosie = [-121.7345,36.4755];
+var songbird = [-121.8310,36.5243];
+var garlandRanchVehicle = [-121.7724,36.5098];
+var pgmuseum1 = [-121.9172,36.6219]
+//var garlandRanchEucalyptus = [];
+//var carmelLagoon = [];
+//var greenWoodPark = [];
+var popup = new mapboxgl.Popup({ offset: 25 })
+.setText('Rosies bridge')
+//.setHTML('<iframe width="800" height="800" seamless frameborder="0" scrolling="yes" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRkh-qVDPfmChMk8AkEOjwIA5gUlAaAeoHimQZEL0Szrz7zXrlYZYezk4d7S6qaDxio8CVHP8tsKFGM/pubchart?oid=1836834720&amp;format=interactive"></iframe>');
+var popup1 = new mapboxgl.Popup({offset: 25})
+.setText('Garland ranch vehicle bridge')
+
+var popup2 = new mapboxgl.Popup({offset: 25})
+.setText('pacific grove museum')
+
+// create DOM element for the marker
+var el = document.createElement('div');
+el.id = 'marker';
+
+var el_1 = document.createElement('div')
+el_1.id = 'marker';
+
+var el_2 = document.createElement('div')
+el_2.id = 'pgmuseum';
+
+
+
+// create the marker
+new mapboxgl.Marker(el)
+.setLngLat(rosie)
+.setPopup(popup) // sets a popup on this marker
+.addTo(map);
+
+new mapboxgl.Marker(el_1)
+.setLngLat(garlandRanchVehicle)
+.setPopup(popup1)
+.addTo(map);
+
+
+new mapboxgl.Marker(el_2)
+.setLngLat(pgmuseum1)
+.addTo(map);
+
+
+     
+map.on('load', function () {
+
+map.addLayer({
+'id': 'maine',
+'type': 'fill',
+'source': {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'geometry': {
+'type': 'Polygon',
+'coordinates': [[[-121.784582, 36.808950],
+[-121.808642, 36.704513],
+[-121.834421, 36.638341],
+[-121.897915, 36.612670],
+[-121.968747, 36.569418],
+[-121.936913, 36.514868],
+[-121.923190, 36.438996],
+[-121.862515, 36.284210],
+[-121.331249, 35.780695],
+[-120.936622, 35.783597],
+[-120.216157, 35.789754],
+[-120.216157, 45.46022288673396],
+
+]]
+}
+}
+},
+'layout': {},
+'paint': {
+'fill-color': '#088',
+'fill-opacity': 2.0
+}
+});
+
+
+    map.addSource('dem', {
+    "type": "raster-dem",   
+    "url": "mapbox://mapbox.terrain-rgb"
+    });
+    map.addLayer({
+    "id": "hillshading",
+    "source": "dem",
+    "type": "hillshade"
+    // insert below waterway-river-canal-shadow;
+    // where hillshading sits in the Mapbox Outdoors style
+    }, 'waterway-river-canal-shadow');
+    });
+
+ 
+</script>
+
+
 
 
 </body>

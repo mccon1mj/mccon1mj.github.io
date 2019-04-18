@@ -49,6 +49,34 @@
 ======================================
 */
 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300);
+@import url(https://fonts.googleapis.com/css?family=Squada+One);
+
+#logo-fog {
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(255, 205, 205);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 80px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1;
+  text-shadow: rgb(91, 69, 69) 3px 2px 0;
+  position: relative;
+  transform:rotateX(360deg)
+}
+
+#logo-fog:after {
+  /*background: url(https://subtlepatterns.com/patterns/crossed_stripes.png) repeat;*/
+  background-image: -webkit-linear-gradient(left top, transparent 0%, transparent 25%, #555 25%, #555 50%, transparent 50%, transparent 75%, #555 75%);
+  background-size: 4px 4px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: -5;
+  display: block;
+  text-shadow: none;
+  transform:rotateX(360deg)
+}
 /*Main Styles*/
 body {
     color: #a1a1a1;
@@ -4614,6 +4642,7 @@ blockquote footer {
 		margin-left: auto;
 	}
 	
+
 	
 	.reply {
 		padding-left: 40px
