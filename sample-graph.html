@@ -41,13 +41,24 @@
 body { margin:0; padding:0; }
 #map { position:absolute; top:0; bottom:0; width:100%; }
 #marker {
-background-image: url('./images/marker.png');
+background-image: url('./images/mao-marker.png');
 background-size: cover;
-width: 30px;
-height: 30px;
+width: 25px;
+height: 25px;
 border-radius: 50%;
 cursor: pointer;
 }
+
+#marker-1 {
+background-image: url('./images/marker.png');
+background-size: cover;
+width: 25px;
+height: 25px;
+border-radius: 50%;
+cursor: pointer;
+}
+
+
 #pgmuseum {
 background-image: url('./images/pgmuseum001.jpg');
 background-size: cover;
@@ -57,12 +68,6 @@ border-radius: 50%;
 cursor: pointer;
 
 }
-
-
-#pgmuseum:hover{
-    visibility: visible
-}
-
 .mapboxgl-popup {
 max-width: 200px;
 }
@@ -185,7 +190,7 @@ body { margin:0; padding:0; }
        var map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/gautamtata/cjumy3jci448r1fobzkaqte1j', // the outdoors-v10 style but without Hillshade layers
-center: [-121.6517, 36.5298],
+center: [-121.415010, 36.270127],
 zoom: 8
 });
 
@@ -194,22 +199,188 @@ var rosie = [-121.7345,36.4755];
 var songbird = [-121.8310,36.5243];
 var garlandRanchVehicle = [-121.7724,36.5098];
 var pgmuseum1 = [-121.9172,36.6219]
-//var garlandRanchEucalyptus = [];
-//var carmelLagoon = [];
-//var greenWoodPark = [];
+var Tembladero = [-121.641827,36.686481];
+var Upper_Carr_Lake = [-121.624996,36.690346];
+var Natividad_Creek = [-121.610786,36.698049];
+var Gabilan_Creek = [-121.618658,36.712341];
+var Canyon_Creek_Park = [-121.448815,36.523483];
+var Arroyo_Seco = [-121.322509,36.280613]
+var San_Lorenzo_Park = [-121.146637,36.203563];
+var Greenwood_Park = [-121.914214,36.621562];
+var Plaskett_Creek= [-121.4646235,35.9192732];
+var Big_Creek= [-121.600059,36.069889];
+var Willow_Creek = [-121.46124,35.894088];
+var Mill_Creek= [-121.490596,35.983119];
+// --------------------------- POPUPS
+
+
 var popup = new mapboxgl.Popup({ offset: 25 })
-.setText('Rosies bridge')
-//.setHTML('<iframe width="800" height="800" seamless frameborder="0" scrolling="yes" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRkh-qVDPfmChMk8AkEOjwIA5gUlAaAeoHimQZEL0Szrz7zXrlYZYezk4d7S6qaDxio8CVHP8tsKFGM/pubchart?oid=1836834720&amp;format=interactive"></iframe>');
-var popup1 = new mapboxgl.Popup({offset: 25})
-.setText('Garland ranch vehicle bridge')
+.setText('Songbird preserve');
+
+var popup1 = new mapboxgl.Popup({ offset: 25 })
+.setText('garland Ranch vehicle bridge');
+
+var popup2 = new mapboxgl.Popup({ offset: 25 })
+.setText('Rosie bridge');
+
+var popup3 = new mapboxgl.Popup({ offset: 25 })
+.setText('Pacific grove museum');
+
+var popup4 = new mapboxgl.Popup({ offset: 25 })
+.setText('Tembladero Slough');
+
+var popup5 = new mapboxgl.Popup({ offset: 25 })
+.setText('Upper Carr Lake');
+
+var popup6 = new mapboxgl.Popup({ offset: 25 })
+.setText('Natividad Creek');
+
+var popup7 = new mapboxgl.Popup({ offset: 25 })
+.setText('Gabilan Creek');
+
+var popup8 = new mapboxgl.Popup({ offset: 25 })
+.setText('Canyon Creek Park');
+
+var popup9 = new mapboxgl.Popup({ offset: 25 })
+.setText('Arroyo Seco at Elm Avenue');
+
+var popup10 = new mapboxgl.Popup({ offset: 25 })
+.setText('San Lorenzo Park');
+
+var popup11 = new mapboxgl.Popup({ offset: 25 })
+.setText('Plaskett Creek');
+
+var popup12 = new mapboxgl.Popup({ offset: 25 })
+.setText('Big Creek');
+
+var popup13 = new mapboxgl.Popup({ offset: 25 })
+.setText('Willow Creek');
+
+var popup14 = new mapboxgl.Popup({ offset: 25 })
+.setText('Mill Creek');
 
 
 
-var el = document.createElement('div')
-el.id = 'marker';
 
-var element1 = document.createElement('div')
-element1.id = 'marker';
+ 
+// create DOM element for the marker
+
+
+
+var el = document.createElement('div');
+var element1 = document.createElement('div');
+var element2 = document.createElement('div'); 
+var element3 = document.createElement('div');
+var element4 = document.createElement('div');
+var element5 = document.createElement('div');
+var element6 = document.createElement('div');
+var element7 = document.createElement('div');
+var element8 = document.createElement('div');
+var element9 = document.createElement('div');
+var element10 = document.createElement('div');
+var element11 = document.createElement('div');
+var element12 = document.createElement('div');
+var element13 = document.createElement('div');
+var element14 = document.createElement('div');
+
+
+// ELEMENTS CORRELATING TO MARKER ID'S
+el.id = 'marker-1';
+element1.id = 'marker-1';
+element2.id = 'marker-1'
+element3.id = 'pgmuseum'
+element4.id = 'marker-1'
+element5.id = 'marker-1'
+element6.id = 'marker-1'
+element7.id = 'marker-1'
+element8.id = 'marker-1'
+element9.id = 'marker-1'
+element10.id = 'marker-1'
+element11.id = 'marker-1'
+element12.id = 'marker-1'
+element13.id = 'marker-1'
+element14.id = 'marker-1'
+
+
+// CREATING THE MARKERS
+new mapboxgl.Marker(el)
+    .setLngLat(songbird)
+    .setPopup(popup) // sets a popup on this marker
+    .addTo(map);
+
+new mapboxgl.Marker(element1)
+    .setLngLat(garlandRanchVehicle)
+    .setPopup(popup1) // sets a popup on this marker
+    .addTo(map);
+
+new mapboxgl.Marker(element2)
+    .setLngLat(rosie)
+    .setPopup(popup2) // sets a popup on this marker
+    .addTo(map);   
+
+new mapboxgl.Marker(element3)
+    .setLngLat(pgmuseum1)
+    .setPopup(popup3) // sets a popup on this marker
+    .addTo(map);
+
+    new mapboxgl.Marker(element4)
+    .setLngLat(Tembladero)
+    .setPopup(popup4) // sets a popup on this marker
+    .addTo(map);
+
+    new mapboxgl.Marker(element4)
+    .setLngLat(Upper_Carr_Lake)
+    .setPopup(popup5) // sets a popup on this marker
+    .addTo(map);
+
+    new mapboxgl.Marker(element5)
+    .setLngLat(Natividad_Creek)
+    .setPopup(popup6) // sets a popup on this marker
+    .addTo(map);
+
+    new mapboxgl.Marker(element6)
+    .setLngLat(Gabilan_Creek)
+    .setPopup(popup7) // sets a popup on this marker
+    .addTo(map);
+
+    new mapboxgl.Marker(element8)
+    .setLngLat(Canyon_Creek_Park)
+    .setPopup(popup8) // sets a popup on this marker
+    .addTo(map);
+
+    new mapboxgl.Marker(element9)
+    .setLngLat(Arroyo_Seco)
+    .setPopup(popup9) // sets a popup on this marker
+    .addTo(map);
+
+    new mapboxgl.Marker(element10)
+    .setLngLat(San_Lorenzo_Park)
+    .setPopup(popup10) // sets a popup on this marker
+    .addTo(map);
+
+    
+    new mapboxgl.Marker(element11)
+    .setLngLat(Plaskett_Creek)
+    .setPopup(popup11) // sets a popup on this marker
+    .addTo(map);
+
+    
+    new mapboxgl.Marker(element12)
+    .setLngLat(Big_Creek)
+    .setPopup(popup12) // sets a popup on this marker
+    .addTo(map);
+
+    
+    new mapboxgl.Marker(element13)
+    .setLngLat(Willow_Creek)
+    .setPopup(popup13) // sets a popup on this marker
+    .addTo(map);
+
+    
+    new mapboxgl.Marker(element14)
+    .setLngLat(Mill_Creek)
+    .setPopup(popup14) // sets a popup on this marker
+    .addTo(map);
 
 
 
