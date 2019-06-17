@@ -1,42 +1,42 @@
 [
     {
       "state":"pH",
-      "date":"9122018",
+      "date": 9122018,
       "value":"7.5"
     },
     {
       "state":"pH",
-      "date":"9132018",
+      "date": 9132018,
       "value":"9"
     },
     {
       "state":"pH",
-      "date":"9262018",
+      "date": 9262018,
       "value":"8"
     },
     {
       "state":"pH",
-      "date":"10302018",
+      "date": 10302018,
       "value":"11"
     },
     {
       "state":"pH",
-      "date":"01232019",
+      "date": 01232019,
       "value":"8"
     },
     {
       "state":"pH",
-      "date":"02072019",
+      "date": 02072019,
       "value":"8.5"
     },
     {
       "state":"pH",
-      "date":"02122019",
+      "date":02122019,
       "value":"8"
     },
     {
       "state":"pH",
-      "date":"02202019",
+      "date": 02202019,
       "value":"8.5"
     },{
       "state":"Air Temp C",
