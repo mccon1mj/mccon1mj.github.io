@@ -21,22 +21,22 @@
     },
     {
       "state":"pH",
-      "date": 01232019,
+      "date": 1232019,
       "value":"8"
     },
     {
       "state":"pH",
-      "date": 02072019,
+      "date": 2072019,
       "value":"8.5"
     },
     {
       "state":"pH",
-      "date":02122019,
+      "date": 2122019,
       "value":"8"
     },
     {
       "state":"pH",
-      "date": 02202019,
+      "date": 2202019,
       "value":"8.5"
     },{
       "state":"Air Temp C",
@@ -60,26 +60,26 @@
     },
     {
       "state":"Air Temp C",
-      "date": 01232019,
+      "date": 1232019,
       "value":"19"
     },
     {
       "state":"Air Temp C",
-      "date": 02072019,
+      "date": 2072019,
       "value":"9.2"
     },
     {
       "state":"Air Temp C",
-      "date": 02122019,
+      "date": 2122019,
       "value":"8"
     },
     {
       "state":"Air Temp C",
-      "date": 02202019,
+      "date": 2202019,
       "value":"13.6"
     },{
       "state":"Depth",
-      "date": 9122018,
+      "date": 122018,
       "value":"16.5"
     },
     {
@@ -99,23 +99,23 @@
     },
     {
       "state":"Depth",
-      "date": 01232019,
+      "date": 1232019,
       "value":"2.3"
     },
     {
       "state":"Depth",
-      "date": 02072019,
+      "date": 2072019,
       "value":"6"
     },
     {
       "state":"Depth",
-      "date": 02122019,
+      "date": 2122019,
       "value":"4.5"
     },
     {
       "state":"Depth",
-      "date": 02202019,
+      "date": 2202019,
       "value":"8.5"
     }
     
-    ]
+]
