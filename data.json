@@ -1,37 +1,37 @@
 [
     {
       "state":"pH",
-      "date": 9122018,
+      "date": 2018,
       "value":"7.5"
     },
     {
       "state":"pH",
-      "date": 9132018,
+      "date": 2018,
       "value":"9"
     },
     {
       "state":"pH",
-      "date": 9262018,
+      "date": 2018,
       "value":"8"
     },
     {
       "state":"pH",
-      "date": 10302018,
+      "date": 2018,
       "value":"11"
     },
     {
       "state":"pH",
-      "date": 1232019,
+      "date": 2019,
       "value":"8"
     },
     {
       "state":"pH",
-      "date": 2072019,
+      "date": 2019,
       "value":"8.5"
     },
     {
       "state":"pH",
-      "date": 2122019,
+      "date": 2019,
       "value":"8"
     },
     {
@@ -40,81 +40,81 @@
       "value":"8.5"
     },{
       "state":"Air Temp C",
-      "date": 9122018,
+      "date": 2018,
       "value":"17.8"
     },
     {
       "state":"Air Temp C",
-      "date": 9132018,
+      "date": 2018,
       "value":"11.1"
     },
     {
       "state":"Air Temp C",
-      "date": 9262018,
+      "date": 2018,
       "value":"17.8"
     },
     {
       "state":"Air Temp C",
-      "date": 10302018,
+      "date": 2018,
       "value":"11"
     },
     {
       "state":"Air Temp C",
-      "date": 1232019,
+      "date": 2019,
       "value":"19"
     },
     {
       "state":"Air Temp C",
-      "date": 2072019,
+      "date": 2019,
       "value":"9.2"
     },
     {
       "state":"Air Temp C",
-      "date": 2122019,
+      "date": 2019,
       "value":"8"
     },
     {
       "state":"Air Temp C",
-      "date": 2202019,
+      "date": 2019,
       "value":"13.6"
     },{
       "state":"Depth",
-      "date": 122018,
+      "date": 2018,
       "value":"16.5"
     },
     {
       "state":"Depth",
-      "date": 9132018,
+      "date": 2018,
       "value":"20.3"
     },
     {
       "state":"Depth",
-      "date": 9262018,
+      "date": 2018,
       "value":"6.4"
     },
     {
       "state":"pH",
-      "date": 10302018,
+      "date": 2018,
       "value":"16"
     },
     {
       "state":"Depth",
-      "date": 1232019,
+      "date": 2019,
       "value":"2.3"
     },
     {
       "state":"Depth",
-      "date": 2072019,
+      "date": 2019,
       "value":"6"
     },
     {
       "state":"Depth",
-      "date": 2122019,
+      "date": 2019,
       "value":"4.5"
     },
     {
       "state":"Depth",
-      "date": 2202019,
+      "date": 2019,
       "value":"8.5"
     }
     
