@@ -1985,7 +1985,7 @@ header.no_border {
 		}
 		.sub_menu a {
 			font: 16px/24px Oswald;
-			color: #06133d;
+			color: #ffffff;
 			padding: 12px 15px 10px;
 			display: block;
 			position: relative;
@@ -1996,7 +1996,7 @@ header.no_border {
 			height: 48px
 		}
 			.sub_menu ul ul a {
-				color: #ff9494
+				color: #77bcd1
 			}
 			.sub_menu a:hover, .sub_menu a.active {
 				transition:0.3s all;
