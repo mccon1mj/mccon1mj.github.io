@@ -1985,7 +1985,7 @@ header.no_border {
 		}
 		.sub_menu a {
 			font: 16px/24px Oswald;
-			color: #ffffff;
+			color: #ffffff; /*menu text color*/
 			padding: 12px 15px 10px;
 			display: block;
 			position: relative;
@@ -2017,7 +2017,7 @@ header.no_border {
 				border:0 solid rgba(255,255,255,0.18);
 			}
 			.sub_menu a:hover:before, .sub_menu a.active:before {
-				background: #ffa7a7;
+				background: #77bcd1;
 			}
 			
 		.contacts_block {
